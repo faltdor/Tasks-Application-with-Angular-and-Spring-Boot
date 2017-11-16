@@ -1,5 +1,9 @@
 package com.faltdor.todo.service;
 
-public interface ITaskService {
+import com.faltdor.todo.domain.Task;
 
+public interface ITaskService {
+	
+	Iterable<Task> list();
+	
 }
