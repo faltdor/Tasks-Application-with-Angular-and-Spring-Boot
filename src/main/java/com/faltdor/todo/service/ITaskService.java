@@ -6,4 +6,6 @@ public interface ITaskService {
 	
 	Iterable<Task> list();
 	
+	Task save (Task task);
+	
 }
