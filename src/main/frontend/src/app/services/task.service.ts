@@ -3,12 +3,12 @@ import { Http } from  '@angular/http';
 
 import "rxjs/add/operator/map";
 
-
+import { Task } from '../model/task';
 
 @Injectable()
 export class TaskService {
 
- private urlTask: string =  '/api/tasks';
+ private urlTask: string =  '/api/tasks/';
 
   constructor(private _http: Http) { }
 
@@ -18,6 +18,12 @@ export class TaskService {
   }
 
 
-  saveTask(task,checked){}
+  saveTask(task:Task,checked:boolean){
+  	task.completed = checked;
+
+  	return this._http.post(this.urlTask+'save',task)
+  			  .map(response => response.json())	;
+
+  }
 
 }

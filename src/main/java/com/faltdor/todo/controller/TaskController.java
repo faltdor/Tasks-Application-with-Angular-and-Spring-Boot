@@ -18,7 +18,7 @@ public class TaskController {
 	public TaskController(TaskServiceImpl taskService) {
 		this.taskService = taskService;
 	}
-
+	
 	@GetMapping(value= {"","/"})
 	public Iterable<Task> listTask(){
 		return this.taskService.list();
