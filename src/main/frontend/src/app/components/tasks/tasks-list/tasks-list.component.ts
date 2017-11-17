@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../../../model/task';
+
 
 import { TaskService } from '../../../services/task.service';
 
+import { Task } from '../../../model/task';
 
 @Component({
   selector: 'app-tasks-list',
@@ -29,7 +30,7 @@ export class TasksListComponent implements OnInit {
                     (error) =>{
                       console.log(error);
                     });
-
+    this.taskService.onTaskAdded.subscribe((task: Task) => this.tasks.push(task));
   }
 
   onTaskChange(event, task: Task){
