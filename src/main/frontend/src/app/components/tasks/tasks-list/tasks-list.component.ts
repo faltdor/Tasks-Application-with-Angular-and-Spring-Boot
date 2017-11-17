@@ -37,7 +37,7 @@ export class TasksListComponent implements OnInit {
     console.log(task);
     this.taskService.saveTask(task,event.target.checked)
                     .subscribe((task : any) => {
-                      console.log(task);                     
+                                        
                     },
                     (error) =>{
                       console.log(error);
