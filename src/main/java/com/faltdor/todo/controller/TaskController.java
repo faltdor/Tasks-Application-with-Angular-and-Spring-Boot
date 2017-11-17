@@ -10,7 +10,7 @@ import com.faltdor.todo.domain.Task;
 import com.faltdor.todo.service.TaskServiceImpl;
 
 @RestController
-@RequestMapping("/api/task")
+@RequestMapping("/api/tasks")
 public class TaskController {
 	
 	private final TaskServiceImpl taskService;
